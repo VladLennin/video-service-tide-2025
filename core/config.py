@@ -17,9 +17,11 @@ class Settings(BaseSettings):
         env_file=(".env.template", ".env")
     )
     logs: LogConfig = LogConfig()
+
     runwayml_api_key: str
     azure_endpoint: str
     dalle_api_key: str
+
     port: int = 8000
     host: str = "0.0.0.0"
     api_prefix: str = "/api"

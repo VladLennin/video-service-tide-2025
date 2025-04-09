@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, Optional
 
 from pydantic import BaseModel
 
@@ -10,7 +10,8 @@ class VideoFromImage(BaseModel):
 
 
 class VideoCollectionRequest(BaseModel):
-    starting_image_url: str
+    start_image_url: Optional[str] = None
+    start_image_prompt: Optional[str] = None
     prompts: list[str]
 
 
