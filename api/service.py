@@ -59,7 +59,7 @@ async def concatenate_videos(video_paths: list[str]) -> str:
     output_dir = Path("videos")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    output_filename = output_dir / f"{datetime.now}_{uuid.uuid4().hex}_final.mp4"
+    output_filename = output_dir / f"{datetime.now()}_{uuid.uuid4().hex}_final.mp4"
     final_clip.write_videofile(str(output_filename), codec="libx264")
 
     for clip in clips:
