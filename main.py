@@ -12,6 +12,8 @@ main_app = FastAPI(
 main_app.include_router(api_router)
 
 Path("images").mkdir(parents=True, exist_ok=True)
+main_app.mount("/videos", StaticFiles(directory="videos"), name="videos")
+
 Path("videos").mkdir(parents=True, exist_ok=True)
 
 main_app.mount("/images", StaticFiles(directory="images"), name="images")
